@@ -1,0 +1,14 @@
+# Node / Vite
+node_modules/
+dist/
+.vite/
+*.log
+
+# Local database (don’t commit SQLite file)
+server/prisma/dev.db
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
