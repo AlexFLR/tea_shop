@@ -23,7 +23,7 @@ app.use('/api/categories', categoriesRoutes);
 app.use('/api/products', productsRoutes);
 
 
-app.use('/api/cart', cartRoutes);
+app.use('/api/orders', ordersRoutes);
 app.use('/api/cart', ordersRoutes);
 app.use('/api/rate', rateRoutes);
 
