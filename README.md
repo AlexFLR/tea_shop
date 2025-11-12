@@ -18,38 +18,34 @@ A full-stack e-commerce demo website built with **Node.js**, **Express**, **Pris
 
 ### 1. Clone the repository
 git clone https://github.com/AlexFLR/tea_shop
-cd tea_shop
+- cd tea_shop
 
 ### 2. Install dependencies
 # Root (to install concurrently for both apps)
-npm install
+- npm install
 
 # Backend (Express + Prisma)
-cd server
-npm install
+- cd server
+- npm install
 
 # Frontend (React + Vite)
-cd client
-npm install
+- cd client
+- npm install
 
 ### 3. Initialize the Prisma database
 The Prisma schema and seed files are located in the `server/prisma/` folder.  
 To generate the client, create the SQLite database, and populate it with sample data, run the following commands from the `server` directory:
 
-npm run prisma:generate
-npm run prisma:migrate
-npm run seed
-
----
+- npm run prisma:generate
+- npm run prisma:migrate
+- npm run seed
 
 ## Running the Project
 The root `package.json` includes a script to start both the backend and frontend simultaneously.  
 Run the following commands from the project root:
 
-cd ..
-npm run dev
-
----
+- cd ..
+- npm run dev
 
 ## Access the Application
 - Frontend: http://localhost:5173  
@@ -65,8 +61,8 @@ Example API endpoints:
 
 ## Troubleshooting
 **Prisma Client not initialized**
-cd server
-npm run prisma:generate
+- cd server
+- npm run prisma:generate
 
 **Port conflicts**
 - Change backend port in `.env` (default: 4000)  
