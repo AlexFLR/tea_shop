@@ -4,10 +4,9 @@ dist/
 .vite/
 *.log
 
-# Local database (don’t commit SQLite file)
+# Local database 
 server/prisma/dev.db
 
-# Editors / OS
 .DS_Store
 .vscode/
 .idea/

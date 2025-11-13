@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getToken } from '../lib/auth';
-import { useCart } from '../context/CartContext.jsx'; // ✅ new
+import { useCart } from '../context/CartContext.jsx'; 
 import { getEurToRon, eur, ron } from '../lib/rate';
 
 export default function Cart() {
   const [items, setItems] = useState([]);
   const [rate, setRate]   = useState(null);
   const [currency, setCurrency] = useState('EUR');
-  const { reload } = useCart(); // ✅ access reload from context
+  const { reload } = useCart(); 
   const token = getToken();
 
   const load = async () => {
@@ -30,7 +30,7 @@ export default function Cart() {
       headers: { Authorization: `Bearer ${token}` }
     });
     await load();
-    reload(); // ✅ update navbar count
+    reload(); 
   };
 
   const clearCart = async () => {
@@ -39,7 +39,7 @@ export default function Cart() {
       headers: { Authorization: `Bearer ${token}` }
     });
     await load();
-    reload(); // ✅ update navbar count
+    reload(); 
   };
 
   const checkout = async () => {
@@ -50,14 +50,14 @@ export default function Cart() {
     if (!r.ok) return alert('Checkout failed');
     alert('Order placed!');
     await load();
-    reload(); // ✅ update navbar count
+    reload(); 
   };
 
-  // --- calcule + formatare în funcție de monedă ---
+
   const lineInSelected = (eurValue) => {
     if (currency === 'EUR') return eur(eurValue);
     if (rate) return ron(eurValue * rate);
-    // fallback dacă nu avem încă rate
+   
     return '—';
   };
 

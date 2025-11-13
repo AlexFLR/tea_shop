@@ -55,7 +55,7 @@ export default function Register() {
 
       {error && <div className="alert alert-danger">{error}</div>}
 
-      {/* Dezactivează autocomplete la nivel de formular */}
+      
       <form onSubmit={handleSubmit} autoComplete="off">
         <div className="mb-3">
           <label className="form-label">Name</label>
@@ -67,7 +67,7 @@ export default function Register() {
             value={form.name}
             onChange={handleChange}
             placeholder="Your name"
-            autoComplete="name"        /* corect pentru browser */
+            autoComplete="name"        
           />
           
         </div>
@@ -82,7 +82,7 @@ export default function Register() {
             value={form.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            autoComplete="email"       /* NU 'off' – Chrome preferă 'email' */
+            autoComplete="email"      
           />
           
         </div>
@@ -98,7 +98,7 @@ export default function Register() {
             value={form.password}
             onChange={handleChange}
             placeholder="Minimum 6 characters"
-            autoComplete="new-password" /* recomandat pentru register */
+            autoComplete="new-password" 
           />
          
         </div>

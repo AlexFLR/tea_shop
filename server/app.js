@@ -7,10 +7,10 @@ import cartRoutes from './src/routes/cart.js';
 import ordersRoutes from './src/routes/orders.js';
 import rateRoutes from './src/routes/rate.js';
 
-// 👉 deocamdată montăm DOAR ruta de auth (ca să nu dea eroare dacă celelalte fișiere nu există încă)
+
 import authRoutes from './src/routes/auth.js';
 
-const app = express();            // <= inițializează app ÎNAINTE de app.use(...)
+const app = express();            
 app.use(cors());
 app.use(express.json());
 

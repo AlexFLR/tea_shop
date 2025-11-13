@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 const router = Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'chai_monk_secret';
 
-// helper simplu
+
 function isValidEmail(email = '') {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -17,7 +17,6 @@ function signToken(user) {
 /**
  * POST /api/auth/register
  * body: { email, password, name? }
- * creează user cu role "user", întoarce token + user info
  */
 router.post('/register', async (req, res) => {
   try {

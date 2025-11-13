@@ -4,7 +4,7 @@ import { authRequired } from '../middleware/auth.js';
 
 const router = Router();
 
-// GET /api/cart  – conținutul coșului pentru userul curent
+// GET /api/cart  
 router.get('/', authRequired, async (req, res) => {
   const items = await prisma.cartItem.findMany({
     where: { userId: req.user.id },
@@ -14,7 +14,7 @@ router.get('/', authRequired, async (req, res) => {
   res.json(items);
 });
 
-// POST /api/cart  – adaugă (sau mărește cantitatea) unui produs în coș
+// POST /api/cart  
 router.post('/', authRequired, async (req, res) => {
   let { productId, qty } = req.body || {};
   productId = Number(productId);
@@ -40,7 +40,7 @@ router.post('/', authRequired, async (req, res) => {
   res.json(item);
 });
 
-// PUT /api/cart/:itemId – modifică cantitatea
+// PUT /api/cart/:itemId 
 router.put('/:itemId', authRequired, async (req, res) => {
   const itemId = Number(req.params.itemId);
   const qty = Number(req.body?.qty);
@@ -53,14 +53,14 @@ router.put('/:itemId', authRequired, async (req, res) => {
   res.json(updated);
 });
 
-// DELETE /api/cart/:itemId – remove la un item
+// DELETE /api/cart/:itemId 
 router.delete('/:itemId', authRequired, async (req, res) => {
   const itemId = Number(req.params.itemId);
   await prisma.cartItem.delete({ where: { id: itemId } });
   res.json({ ok: true });
 });
 
-// DELETE /api/cart – golește coșul userului curent
+// DELETE /api/cart 
 router.delete('/', authRequired, async (req, res) => {
   await prisma.cartItem.deleteMany({ where: { userId: req.user.id } });
   res.json({ ok: true });

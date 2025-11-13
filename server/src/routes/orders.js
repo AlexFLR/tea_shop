@@ -4,7 +4,7 @@ import { authRequired } from '../middleware/auth.js';
 
 const router = Router();
 
-// 🔹 Checkout = finalizează comanda
+// 🔹 Checkout 
 router.post('/checkout', authRequired, async (req, res) => {
   const items = await prisma.cartItem.findMany({
     where: { userId: req.user.id },

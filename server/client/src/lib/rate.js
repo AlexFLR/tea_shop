@@ -1,6 +1,6 @@
 const KEY = 'eur_to_ron';
 const KEY_TS = 'eur_to_ron_ts';
-const TTL_MS = 10 * 60 * 1000; // 10 minute
+const TTL_MS = 10 * 60 * 1000; 
 
 export async function getEurToRon() {
   try {
@@ -19,7 +19,7 @@ export async function getEurToRon() {
       return rate;
     }
   } catch (_) {}
-  // fallback: dacă nu merge nimic, întoarcem null
+ 
   return null;
 }
 

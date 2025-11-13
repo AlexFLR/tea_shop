@@ -5,13 +5,13 @@ import { requireRole } from '../middleware/role.js';
 
 const router = Router();
 
-// Public: listă categorii
+// Public: 
 router.get('/', async (_req, res) => {
   const categories = await prisma.category.findMany();
   res.json(categories);
 });
 
-// Admin: create
+// Admin: 
 router.post('/', authRequired, requireRole('admin'), async (req, res) => {
   const { name } = req.body || {};
   if (!name) return res.status(400).json({ error: 'Missing name' });

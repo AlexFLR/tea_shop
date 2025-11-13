@@ -5,7 +5,7 @@ import { requireRole } from '../middleware/role.js';
 
 const router = Router();
 
-// Public: listă produse (opțional filtrare după categoryId)
+// Public:
 router.get('/', async (req, res) => {
   const { categoryId } = req.query;
   const where = categoryId ? { categoryId: Number(categoryId) } : {};
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   res.json(products);
 });
 
-// Public: detalii produs
+// Public: 
 router.get('/:id', async (req, res) => {
   const p = await prisma.product.findUnique({ where: { id: Number(req.params.id) } });
   if (!p) return res.status(404).json({ error: 'Not found' });

@@ -5,7 +5,7 @@ export function authRequired(req, res, next) {
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
   if (!token) return res.status(401).json({ error: 'Missing token' });
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET); // { id, role }
+    const payload = jwt.verify(token, process.env.JWT_SECRET); 
     req.user = payload;
     next();
   } catch {
