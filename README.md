@@ -4,7 +4,12 @@ A full-stack e-commerce demo website built with **Node.js**, **Express**, **Pris
 
 ---
 
+-- **Link inregistrare** - https://youtu.be/UoScNEtFehA
+
+---
+
 ## Features
+
 
 - **Backend (Express + Prisma)** — REST API, JWT authentication, SQLite database  
 - **Frontend (React + Vite)** — Single Page Application using React Router and Bootstrap  

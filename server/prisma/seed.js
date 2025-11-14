@@ -10,11 +10,11 @@ async function main() {
 
   console.log('DB:', process.env.DATABASE_URL);
 
-  // 1) Curățăm în ordinea corectă
+
   await prisma.orderItem.deleteMany({});
   await prisma.cartItem.deleteMany({});
   await prisma.order.deleteMany({});
-  //await prisma.product.deleteMany({}); // nu șterg Category
+
 
 
   const adminPass = await bcrypt.hash('admin123', 10);
@@ -68,19 +68,19 @@ for (const p of products) {
       },
       create: p,
     });
-    console.log(`✅ Procesat: ${updated.title} → ${updated.image_url}`);
+    console.log(` Processed: ${updated.title} → ${updated.image_url}`);
   } catch (e) {
-    console.error(`❌ Eroare la ${p.title}:`, e.message);
+    console.error(`Error ${p.title}:`, e.message);
   }
 }
 
 const total = await prisma.product.count();
-console.log('📦 total products now =', total);
-console.log('✅ Seed done (upsert).');
+console.log(' total products now =', total);
+console.log(' Seed done (upsert).');
 }
 
 main()
-  .catch((e) => { console.error('❌ Seed error:', e); process.exit(1); })
+  .catch((e) => { console.error('Seed error:', e); process.exit(1); })
   .finally(async () => { await prisma.$disconnect(); });
 
 

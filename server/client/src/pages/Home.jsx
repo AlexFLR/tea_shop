@@ -19,6 +19,7 @@ export default function Home() {
     //  Fetch curs 
     getEurToRon().then(setRate);
   }, []);
+  
   const { reload } = useCart();
   const addToCart = async (productId) => {
     const token = getToken();

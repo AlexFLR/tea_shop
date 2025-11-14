@@ -34,8 +34,7 @@ export default function Navbar() {
                     borderRadius: '50%'
              }}
           />
-          <span>Monk's Chai</span>
-        </Link>
+          <span>Monk's Chai</span> </Link>
 
         <button
           className="navbar-toggler"

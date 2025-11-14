@@ -43,7 +43,7 @@ export default function Cart() {
   };
 
   const checkout = async () => {
-    const r = await fetch('http://localhost:4000/api/cart/checkout', {
+    const r = await fetch('http://localhost:4000/api/orders/checkout', {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` }
     });

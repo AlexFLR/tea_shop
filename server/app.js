@@ -7,7 +7,6 @@ import cartRoutes from './src/routes/cart.js';
 import ordersRoutes from './src/routes/orders.js';
 import rateRoutes from './src/routes/rate.js';
 
-
 import authRoutes from './src/routes/auth.js';
 
 const app = express();            
@@ -24,7 +23,7 @@ app.use('/api/products', productsRoutes);
 
 
 app.use('/api/orders', ordersRoutes);
-app.use('/api/cart', ordersRoutes);
+app.use('/api/cart', cartRoutes);
 app.use('/api/rate', rateRoutes);
 
 // Server

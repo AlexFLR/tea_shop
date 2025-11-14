@@ -30,10 +30,10 @@ model Product {
   image_url  String?
   categoryId Int
 
-  // Relația cu Category
+
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
-  // 🔹 Relațiile inverse (back-relations) adăugate acum
+
   cartItems  CartItem[]
   orderItems OrderItem[]
 }
